@@ -1,0 +1,516 @@
+/* Quitar márgenes y paddings globales */
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%; /* Asegurarse de que ocupen el 100% del ancho */
+    height: 100%; /* Asegurarse de que ocupen el 100% del alto */
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Evitar el scroll horizontal */
+    background-color: #f5f5f5; /* Fondo gris claro */
+    font-family: Arial, sans-serif;
+}
+
+/* Carrusel */
+.carousel-container {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Limitar el ancho del carrusel */
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out; /* Animación de transición */
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Estilos de los controles (botones de siguiente y anterior) */
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+}
+
+.carousel-controls button {
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para los botones */
+    border: none;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.carousel-controls button:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Cambio de color al pasar el mouse */
+}
+
+/* General Styles */
+header {
+    background-color: #333; /* Fondo gris oscuro */
+    color: #fff;
+    padding: 10px 10px;
+}
+
+.top-header {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre el logo y la ubicación */
+    align-items: center;
+    width: 100%;
+    background-color: #333; /* Fondo gris de la barra */
+    padding: 10px 20px; /* Asegura que la barra tenga espacio alrededor */
+    box-sizing: border-box; /* Asegura que el padding no cause desbordamientos */
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.location-icon {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px; /* Bordes más redondeados para una apariencia circular */
+    width: 400px;
+}
+
+.search-container input {
+    border: none;
+    width: 100%;
+    font-size: 16px;
+    border-radius: 20px;
+    outline: none;
+}
+
+.search-container button {
+    background-color: #4d4d4d;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.premium-plan {
+    display: flex;
+    align-items: center;
+}
+
+.premium-button {
+    background-color: #9e9e9e;
+    color: #fff;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.premium-button:hover {
+    background-color: #707070;
+}
+
+/* Navigation Styles */
+.main-nav {
+    background-color: #444; /* Gris más claro que el encabezado */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav li {
+    margin-right: 25px; /* Aumentada la separación entre los elementos del menú */
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 14px;
+}
+
+.main-nav a:hover {
+    color: #ffcc00;
+}
+
+/* User Menu */
+.user-menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto; /* Mover al final (derecha) */
+}
+
+.user-menu a {
+    background-color: #d3d3d3; /* Gris claro para los botones */
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-left: 10px;
+    font-size: 14px;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.user-menu a:hover {
+    background-color: #b0b0b0; /* Gris más oscuro en hover */
+}
+
+.cart {
+    font-size: 20px;
+    background-color: transparent;
+    padding: 10px;
+    margin-left: 10px;
+}
+
+/* Main Banner Styles */
+.main-banner {
+    background: linear-gradient(to bottom, #555, rgba(85, 85, 85, 0)); /* Degradado que se desvanece */
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.banner-content h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.savings-button {
+    background-color: #ffcc00;
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.banner-content p {
+    margin: 10px 0;
+}
+
+.banner-content small {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #ccc;
+}
+
+/* Benefit Cards */
+.benefits-cards {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #fff;
+}
+
+.benefit-card {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    text-align: center;
+    width: 180px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Transición para animación suave */
+}
+
+.benefit-card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra más intensa al pasar el mouse */
+    transform: translateY(-5px); /* Pequeño desplazamiento hacia arriba */
+}
+
+.benefit-card img {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+    display: block; /* Permite que el margen automático funcione */
+    margin: 0 auto; /* Centra horizontalmente la imagen */
+}
+
+.benefit-card span {
+    display: block;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Estilos para botones específicos */
+/* Botones generales de la aplicación */
+.button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Estilos específicos para el botón de administración */
+.admin-button {
+    background-color: #6c757d; /* Gris medio */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 15px; /* Espaciado adicional para no estar demasiado cerca de otros elementos */
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.admin-button:hover {
+    background-color: #5a6268; /* Gris más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño desplazamiento hacia arriba */
+}
+
+/* Estilos para el botón de cerrar sesión */
+.cerrar-sesion-button {
+    background-color: #6c757d; /* Gris medio */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-top: 10px; /* Añadir espacio en la parte superior para que no esté pegado */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.cerrar-sesion-button:hover {
+    background-color: #5a6268; /* Gris más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño desplazamiento hacia arriba */
+}
+
+/* Estilos para los botones de registrar e ingresar */
+.btn-login {
+    background-color: #4CAF50; /* Verde para indicar algo positivo */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-right: 15px; /* Añadir un margen a la derecha para separación entre botones */
+    margin-left: 5px; /* Añadir un margen a la izquierda para espaciado respecto a otros elementos */
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #45a049; /* Verde más oscuro al pasar el ratón */
+    transform: translateY(-2px); /* Pequeño desplazamiento hacia arriba */
+}
+
+/* Estilos para el ícono de usuario */
+.imagen-usuario {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; /* Hace la imagen circular */
+    margin-left: 10px; /* Espaciado para no estar demasiado pegado */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.imagen-usuario:hover {
+    transform: scale(1.1); /* Hacer un poco más grande al pasar el ratón */
+}
+
+/* Estilo del menú de usuario cuando se despliega */
+.opciones-usuario {
+    background-color: #c6c3c3; /* Color gris claro */
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para dar profundidad */
+    padding: 15px;
+    position: absolute;
+    top: 60px; /* Ajustado para que aparezca debajo del ícono */
+    right: 0; /* Alineado a la derecha, debajo del ícono */
+    text-align: center;
+    z-index: 1000; /* Asegurarse de que esté sobre otros elementos */
+    min-width: 150px; /* Definir un ancho mínimo para que se vea bien */
+}
+
+/* Ajustes para asegurarnos de que la animación sea atractiva */
+.opciones-usuario {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-usuario:hover .opciones-usuario {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Espaciado adicional para el menú principal y carrito */
+.user-menu a,
+.admin-menu button {
+    margin-left: 15px; /* Añadir margen para no estar demasiado pegados */
+}
+
+/* Mejorar el diseño de la lista principal */
+.main-nav ul li {
+    margin-right: 20px; /* Aumenta el espacio entre los elementos del menú */
+}
+
+/* Ajustar el diseño para dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .top-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .search-container {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .benefits-cards {
+        justify-content: center;
+    }
+
+    .user-menu {
+        margin-top: 10px;
+    }
+}
+
+
+.footer {
+    text-align: center;
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    font-size: 14px;
+    color: #6c757d;
+    border-top: 1px solid #ddd;
+  }
+  
+  .footer a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  .productos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre productos */
+    justify-content: center; /* Centra los productos horizontalmente */
+    padding: 20px;
+    background-color: #f8f8f8; /* Fondo claro para resaltar los productos */
+  }
+  
+  .producto-card {
+    width: 300px;
+    background-color: #ffffff; /* Fondo blanco */
+    border: 1px solid #e0e0e0; /* Borde sutil */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra ligera para profundidad */
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos internos se alineen de arriba a abajo */
+    justify-content: space-between; /* Distribuye los elementos dentro de la tarjeta */
+    padding-bottom: 15px; /* Espacio extra para el botón */
+  }
+  
+  .producto-card:hover {
+    transform: scale(1.05); /* Agranda ligeramente al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Aumenta la sombra en hover */
+  }
+  
+  .producto-imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Asegura que la imagen se ajuste bien */
+    border-bottom: 1px solid #e0e0e0; /* Borde entre imagen y descripción */
+  }
+  
+  h3 {
+    font-size: 1.5em;
+    color: #333;
+    text-align: center; /* Centra el título */
+    margin: 10px 0;
+  }
+  
+  .producto-card p {
+    font-size: 1em;
+    color: #666;
+    padding: 0 15px;
+    margin: 10px 0;
+  }
+  
+  .producto-card p strong {
+    color: #333; /* Acentúa el texto fuerte */
+  }
+  
+  .boton-contenedor {
+    display: flex;
+    justify-content: center; /* Centra el botón horizontalmente */
+    margin-top: 15px;
+  }
+  
+  .boton-agregar-carrito {
+    background-color: #808080; /* Gris */
+    color: #ffffff; /* Texto blanco */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+  
+  .boton-agregar-carrito:hover {
+    background-color: #606060; /* Gris más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Aumenta ligeramente el tamaño para dar feedback al usuario */
+  }
+  
+  @media (max-width: 768px) {
+    .productos {
+      flex-direction: column;
+      align-items: center;
+    }
+    .producto-card {
+      width: 90%;
+    }
+  }
+  

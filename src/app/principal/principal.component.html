@@ -1,0 +1,178 @@
+<body>
+    <header>
+        <div class="top-header">
+            <!-- Logo y ubicación -->
+            <div class="left-section">
+                <img src="glam.png" alt="Logo de GlamShop" class="logo">
+                
+                <!-- Ubicación solo visible para usuarios que NO son administradores -->
+                <div class="location" routerLink="/postal" *ngIf="!esAdministrador">
+                    <i class="location-icon"></i>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Barra de búsqueda solo visible para usuarios que NO son administradores -->
+            <div class="search-container" *ngIf="!esAdministrador">
+                <input type="text" placeholder="Buscar" [(ngModel)]="terminoBusqueda">
+                <button class="search-button" (click)="buscar()">Buscar</button>
+              </div>
+              
+            
+            <!-- Plan premium solo visible para usuarios que NO son administradores -->
+            <div class="premium-plan" *ngIf="!esAdministrador">
+                <a href="/plan" class="premium-button">
+                    Elige tu plan GlamShop desde $299
+                </a>
+            </div>
+        </div>
+
+        <!-- Menú de navegación -->
+        <nav class="main-nav">
+            <!-- Opciones de menú solo visibles para usuarios que NO son administradores -->
+            <ul *ngIf="!esAdministrador">
+                <li><a href="/todo">Productos</a></li>
+                <li><a href="/productos">Vender</a></li>
+                <li><a href="/QR">Mis compras</a></li>
+                <li><a href="/ayuda">Ayuda</a></li>
+            </ul>
+
+            <div class="user-menu">
+                <!-- Mostrar los botones "Ingresar" y "Registrarse" si el usuario NO está autenticado -->
+                <div *ngIf="!usuarioAutenticado">
+                    <a href="/sign-in" class="btn-login">Ingresar</a>
+                    <a href="/login" class="btn-login">Registrarse</a>
+                </div>
+
+                <!-- Mostrar el icono del usuario si el usuario está autenticado -->
+                <div *ngIf="usuarioAutenticado" class="menu-usuario">
+                    <div class="icono-usuario" (click)="toggleMenuUsuario()">
+                        <!-- Añadir imagen de ícono de usuario -->
+                        <img src="perfil.png" alt="Icono de Usuario" class="imagen-usuario"> <!-- Aquí puedes personalizar la ruta de la imagen -->
+                    </div>
+                    <div *ngIf="mostrarOpcionesPerfil" class="opciones-usuario">
+                        <p>Hola, {{ nombreUsuario }}</p>
+                        <button (click)="cerrarSesion()">Cerrar Sesión</button>
+                    </div>
+                </div>
+
+                <!-- Mostrar el botón de administración si el usuario es administrador -->
+                <div *ngIf="esAdministrador" class="admin-menu">
+                    <button (click)="irAdministracion()" class="admin-button">Administración</button>
+                </div>
+
+                <!-- Icono del carrito solo visible si el usuario NO es administrador -->
+                <a href="/carrito" class="cart" *ngIf="!esAdministrador">🛒</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner principal -->
+    <main class="main-container">
+        <div class="main-banner">
+            <div class="carousel-container">
+                <div class="carousel">
+                    <img src="1.png" alt="Imagen 1" class="carousel-image">
+                    <img src="2.png" alt="Imagen 2" class="carousel-image">
+                    <img src="3.png" alt="Imagen 3" class="carousel-image">
+                    <!-- Agrega más imágenes según sea necesario -->
+                </div>
+                <div class="carousel-controls">
+                    <button class="prev-button" (click)="moveCarousel('prev')">&#10094;</button>
+                    <button class="next-button" (click)="moveCarousel('next')">&#10095;</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resultados de la búsqueda -->
+        <div *ngIf="productosEncontrados.length > 0">
+            <table class="search-results-table">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Descripción</th>
+                        <th>Categoría</th>
+                        <th>Imagen</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of productosEncontrados">
+                        <td>{{ producto.nombre_producto }}</td>
+                        <td>{{ producto.precio | currency }}</td>
+                        <td>{{ producto.descripcion }}</td>
+                        <td>{{ producto.categoria }}</td>
+                        <td>
+                            <img *ngIf="producto.imagen" [src]="producto.imagen" alt="{{ producto.nombre_producto }}" width="100">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Mensaje cuando no hay resultados -->
+        <div *ngIf="productosEncontrados.length === 0 && terminoBusqueda">
+            <p>No se encontraron resultados para "{{ terminoBusqueda }}".</p>
+        </div>
+
+
+
+        <div class="productos">
+            <div *ngFor="let producto of productos" class="producto-card">
+              <img [src]="producto.imagen" alt="{{ producto.nombre_producto }}" class="producto-imagen" />
+              <h3>{{ producto.nombre_producto }}</h3>
+              <p><strong>Descripción: </strong>{{ producto.descripcion }}</p>
+              <p><strong>Categoría: </strong>{{ producto.categoria }}</p>
+              <p><strong>Precio: </strong>{{ producto.precio | currency }}</p>
+              <button (click)="agregarAlCarrito(producto.id)" class="boton-agregar-carrito">
+                Agregar al carrito
+              </button>
+            </div>
+          </div>
+          
+
+        <!-- Tarjetas de beneficios (visibles siempre) -->
+        <div class="benefits-cards">
+            <div class="benefit-card">
+                <a href="/todo">
+                <img src="shipped.png" alt="Envío">
+                <span>Envío gratis</span>
+                </a>
+                
+            </div>
+            <div class="benefit-card">
+                <a href="/sign-in">
+                    <img src="perfil.png" alt="Cuenta">
+                    <span>Ingresa a tu cuenta</span>
+                </a>
+            </div>
+            <div class="benefit-card">
+                <a href="/ubica">
+                <img src="loca.png" alt="Ubicación">
+                <span>Ingresa tu ubicación</span></a>
+            </div>
+            <div class="benefit-card">
+                <a href="/docientos">
+                <img src="precio.png" alt="Precios">
+                <span>Menos de $200</span>
+            </a>
+            </div>
+            <div class="benefit-card">
+                <a href="/docientos">
+                <img src="ventas.png" alt="Ventas">
+                <span>Más vendidos</span>
+                </a>
+                
+            </div>
+        </div>
+
+       <footer class="footer">
+  <p>
+    © 2024 GlamShop. Todos los derechos reservados.
+    <a href="/poli">Política de Privacidad</a>
+  </p>
+</footer>
+
+          
+    </main>
+</body>

@@ -1,0 +1,175 @@
+/* Estilo general */
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Encabezados */
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  h3 {
+    color: #555;
+    margin-top: 20px;
+  }
+  
+  /* Formulario */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .form-control {
+    width: 100%; /* Asegura que los campos ocupen todo el ancho disponible */
+    max-width: 100%; /* Evita que se extienda más de lo necesario */
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 14px;
+    color: #333;
+    transition: border-color 0.3s;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño del input */
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Botón */
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #5a6268;
+  }
+  
+  /* Lista de productos */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    background-color: #e9ecef;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  /* QR generado */
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  /* Información adicional */
+  p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  strong {
+    color: #333;
+  }
+  
+  /* Ajustes de alineación */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra todos los campos dentro del formulario */
+  }
+  
+  .form-group {
+    width: 100%;
+    max-width: 500px; /* Limita el ancho de los campos a 500px */
+  }
+  
+  /* Hover sobre elementos */
+  .form-group input:hover, .form-group textarea:hover {
+    background-color: #f8f9fa;
+  }
+  
+  /* Estilos adicionales para las listas */
+  ul {
+    margin-left: 0;
+  }
+  
+  .container {
+    margin: 20px auto;
+    max-width: 600px;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-success {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.volver-btn {
+    margin-top: 20px;
+    text-align: left;
+}

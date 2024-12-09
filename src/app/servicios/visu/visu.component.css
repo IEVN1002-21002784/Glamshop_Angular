@@ -1,0 +1,356 @@
+/* Barra de navegación ajustada */
+.main-nav {
+    background-color: #444; /* Gris claro */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center; /* Ajustar para alinear correctamente los elementos */
+    justify-content: space-between; /* Asegura que los elementos estén bien distribuidos */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center; /* Alineación vertical centrada de los elementos */
+    gap: 15px; /* Espacio entre el logo y otros elementos */
+}
+
+.logo img {
+    width: 40px; /* Tamaño más compacto del logo */
+    margin-right: 10px;
+}
+
+.postal-code {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #ffffff;
+}
+
+/* Ajuste de la barra de búsqueda */
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 20px; /* Bordes redondeados */
+    width: 100%;
+    max-width: 300px; /* Ajustado para hacerla más compacta */
+    margin: 0 20px; /* Espacio lateral */
+}
+
+.search-container input[type="text"] {
+    border: none;
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 10px;
+    border-radius: 20px 0 0 20px;
+    outline: none;
+}
+
+.search-container button {
+    background-color: #4d4d4d; /* Gris oscuro */
+    border: none;
+    color: white;
+    font-size: 14px;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    padding: 8px 12px;
+    transition: background-color 0.3s ease;
+}
+
+.search-container button:hover {
+    background-color: #333; /* Más oscuro en hover */
+}
+
+/* Estilo del plan GlamShop */
+.glamshop-plan {
+    background-color: #9e9e9e; /* Gris claro */
+    border-radius: 4px;
+    padding: 6px 12px; /* Ajustado para que sea más pequeño */
+    color: #fff;
+    margin-left: auto;
+}
+
+.glamshop-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 13px; /* Fuente más pequeña para mantenerlo compacto */
+}
+
+.glamshop-link:hover {
+    color: #ffd700; /* Dorado al pasar el mouse */
+}
+
+/* Navegación principal para links */
+.main-nav-links {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0; /* Eliminar el margen para compactar el espacio */
+}
+
+.main-nav-links li {
+    margin-right: 20px; /* Espacio entre los elementos del menú */
+}
+
+.main-nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px; /* Fuente más pequeña */
+    transition: color 0.3s ease;
+}
+
+.main-nav-links a:hover {
+    color: #ffcc00; /* Dorado al pasar el mouse */
+}
+
+/* Menú del usuario */
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-menu a {
+    background-color: #d3d3d3; /* Botones gris claro */
+    color: #333;
+    text-decoration: none;
+    padding: 8px 12px; /* Reducido para mantenerlo compacto */
+    border-radius: 4px;
+    font-size: 13px; /* Fuente más pequeña */
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.user-menu a:hover {
+    background-color: #b0b0b0; /* Gris más oscuro al pasar el mouse */
+}
+
+/* Icono del usuario */
+.icono-usuario img {
+    width: 30px; /* Tamaño más pequeño */
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icono-usuario img:hover {
+    transform: scale(1.1); /* Aumenta un poco el tamaño al pasar el mouse */
+}
+
+.carrito-icono {
+    width: 30px; /* Ajustado para mantener el tamaño de la barra más compacto */
+    height: 30px;
+}
+
+/* Menú desplegable del usuario */
+.opciones-usuario {
+    background-color: #c6c3c3;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    position: absolute;
+    top: 50px; /* Ajustado para una mejor ubicación */
+    right: 0;
+    text-align: center;
+    z-index: 1000;
+    min-width: 150px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-usuario:hover .opciones-usuario {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Ajuste de la barra de navegación para móviles */
+@media screen and (max-width: 768px) {
+    .main-nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-content {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .search-container {
+        max-width: 100%; /* Asegura que ocupe el ancho completo en móviles */
+        margin-bottom: 10px;
+    }
+
+    .main-nav-links {
+        flex-wrap: wrap;
+    }
+
+    .main-nav-links li {
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+
+    .user-menu {
+        margin-top: 10px;
+    }
+}
+
+
+/* Fuente elegante para todos los elementos */
+body {
+    font-family: 'Georgia', serif; /* Fuente elegante y profesional */
+}
+
+/* Tabla de resultados con estilo profesional */
+.resultados-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0; /* Elimina los espacios entre celdas */
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Para asegurar bordes redondeados */
+}
+
+.resultados-table thead {
+    background-color: #333;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.resultados-table th,
+.resultados-table td {
+    padding: 15px;
+    border-bottom: 1px solid #dddddd;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.resultados-table th {
+    background: linear-gradient(45deg, #444, #555); /* Gradiente suave para cabecera */
+    color: #fff;
+}
+
+.resultados-table tr {
+    transition: background-color 0.3s ease;
+}
+
+.resultados-table tr:hover {
+    background-color: #f7f7f7; /* Cambiar color al pasar el mouse */
+}
+
+.resultados-table img {
+    border-radius: 8px;
+    width: 80px;
+    height: auto;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón "Agregar al Carrito" */
+.btn-agregar-carrito {
+    background-color: #808080; /* Gris para indicar acción neutra */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    text-decoration: none; /* Asegura que el texto no tenga subrayado */
+    display: inline-block;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Georgia', serif; /* Fuente elegante */
+}
+
+.btn-agregar-carrito:hover {
+    background-color: #696969; /* Gris más oscuro en hover */
+    transform: translateY(-2px); /* Ligeramente hacia arriba al pasar el mouse */
+}
+
+/* Botón "Volver" */
+.volver-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-start; /* Alinear al inicio (izquierda) */
+}
+
+.btn-volver {
+    background-color: #808080; /* Gris neutro */
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Eliminar subrayado */
+    display: inline-block;
+    font-family: 'Georgia', serif; /* Fuente elegante */
+}
+
+.btn-volver:hover {
+    background-color: #696969; /* Gris más oscuro */
+    transform: translateY(-2px); /* Ligeramente hacia arriba al pasar el mouse */
+}
+
+/* Mensaje sin resultados */
+.no-resultados {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #ffdddd;
+    color: #a94442;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Georgia', serif; /* Fuente elegante */
+}
+
+/* Ajustes para la tabla en dispositivos móviles */
+@media screen and (max-width: 768px) {
+    .resultados-table {
+        width: 100%;
+    }
+
+    .resultados-table th, 
+    .resultados-table td {
+        padding: 10px; /* Reducir el padding para pantallas pequeñas */
+        font-size: 13px; /* Reducir el tamaño de la fuente */
+    }
+
+    .btn-agregar-carrito,
+    .btn-volver {
+        font-size: 13px;
+        padding: 8px 15px;
+    }
+}
+
+
+.add-to-cart {
+    background-color: #808080; /* Color de fondo gris */
+    color: white; /* Color del texto blanco */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interior */
+    text-align: center; /* Alinear el texto al centro */
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Mostrar en línea */
+    font-size: 16px; /* Tamaño de la fuente */
+    margin: 10px 0; /* Margen entre botones */
+    cursor: pointer; /* Mostrar el cursor como una mano al pasar por encima */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease; /* Suavizar el cambio de color al pasar el cursor */
+  }
+  
+  .add-to-cart:hover {
+    background-color: #696969; /* Cambiar a un gris más oscuro al pasar el cursor */
+  }
+  
+  .add-to-cart:active {
+    background-color: #505050; /* Color más oscuro al presionar el botón */
+    box-shadow: 0 5px #666; /* Sombra para darle efecto de ser presionado */
+    transform: translateY(2px); /* Simular que el botón baja un poco */
+  }
+  

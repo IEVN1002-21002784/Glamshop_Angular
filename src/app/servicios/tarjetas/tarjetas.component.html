@@ -1,0 +1,41 @@
+<body>
+    <div class="payment-container">
+      <h2>Pagar</h2>
+      <!-- Cambiamos el formulario para usar Angular Reactive Forms -->
+      <form [formGroup]="tarjetaForm" (ngSubmit)="onPagar()">
+        <div class="input-group">
+          <label for="nombre">Nombre en la tarjeta</label>
+          <input type="text" id="nombre" formControlName="titular" placeholder="Ejemplo: Juan Pérez" required>
+        </div>
+  
+        <div class="input-group">
+          <label for="numero-tarjeta">Número de la tarjeta</label>
+          <div class="card-number-wrapper">
+            <input type="text" id="numero-tarjeta" formControlName="numero_tarjeta" maxlength="16" placeholder="1234 5678 9012 3456" required>
+            <div class="logos">
+              <img src="master.png" alt="Logo Mastercard" class="logo">
+              <img src="visa.png" alt="Logo Visa" class="logo">
+            </div>
+          </div>
+        </div>
+  
+        <div class="input-row">
+            <div class="input-group small">
+                <label for="expiracion">Fecha de expiración</label>
+                <input type="text" id="expiracion" formControlName="fecha_expiracion" placeholder="MM/AA" required pattern="^(0[1-9]|1[0-2])/([0-9]{2})$">
+              </div>
+              
+  
+          <div class="input-group small">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" formControlName="cvv" maxlength="3" placeholder="123" required>
+          </div>
+        </div>
+  
+        <!-- Cambiado el tipo de botón para 'submit' -->
+        <button type="submit" class="btn-pagar">Pagar</button>
+        <a type="button" class="btn-pagar" href="/carrito">Volver</a>
+
+      </form>
+    </div>
+  </body>

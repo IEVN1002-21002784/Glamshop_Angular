@@ -1,0 +1,118 @@
+/* Mantener todo centrado en la pantalla */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0e0e0; /* Fondo gris claro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Envuelve la parte principal del contenido */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ocupa el 100% de la altura */
+    width: 100%;
+}
+
+/* Contenedor principal del formulario */
+.form-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 25px 30px;
+    max-width: 450px;
+    width: 100%;
+    margin: 20px; /* Añadido un margen para evitar desbordamiento */
+}
+
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #444; /* Título en gris oscuro */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555; /* Etiqueta gris medio */
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbb; /* Bordes grises */
+    border-radius: 5px;
+    background-color: #f9f9f9; /* Fondo ligeramente gris */
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #777; /* Color más oscuro al hacer foco */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #666666; /* Botón gris oscuro */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #555555; /* Cambia a un gris más oscuro al pasar el mouse */
+}
+
+/* Estilo para el botón "Volver" en tamaño pequeño */
+.btn-volver {
+    display: inline-block; /* Muestra el botón en línea con otros elementos si es necesario */
+    padding: 10px 20px; /* Espaciado interno: más estrecho que un botón de tamaño completo */
+    background-color: #666666; /* Color de fondo gris */
+    color: #ffffff; /* Color del texto blanco para buen contraste */
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border-radius: 5px; /* Bordes redondeados para un estilo moderno */
+    text-align: center; /* Alinea el texto en el centro */
+    font-weight: bold; /* Hace el texto más destacado */
+    cursor: pointer; /* Cambia el cursor a una mano para indicar interactividad */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transiciones suaves */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Añade una sombra suave */
+    margin-top: 10px; /* Añade un pequeño margen superior para separar de otros elementos */
+}
+
+/* Efecto al pasar el ratón (hover) */
+.btn-volver:hover {
+    background-color: #555555; /* Color ligeramente más oscuro al pasar el ratón */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más profunda al pasar el ratón */
+}
+
+/* Efecto al hacer clic (active) */
+.btn-volver:active {
+    background-color: #444444; /* Color más oscuro cuando se hace clic */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Sombra reducida al presionar */
+}

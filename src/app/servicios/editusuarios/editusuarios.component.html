@@ -1,0 +1,79 @@
+<div class="edit-user-container">
+    <!-- Tabla de Usuarios -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Teléfono</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Listado de usuarios -->
+            <tr *ngFor="let usuario of usuarios">
+                <td>{{ usuario.id }}</td>
+                <td>{{ usuario.nombre }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>{{ usuario.telefono }}</td>
+                <td>{{ usuario.rol }}</td>
+                <td>
+                    <button class="btn btn-primary" (click)="seleccionarUsuario(usuario)">Editar</button>
+                    <button class="btn btn-danger" (click)="eliminarUsuario(usuario.id)">Eliminar</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Formulario de Edición de Usuario -->
+    <div *ngIf="usuarioSeleccionado" class="form-container">
+        <h2>Editar Usuario</h2>
+        <form (ngSubmit)="actualizarUsuario()" #editUserForm="ngForm">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" [(ngModel)]="usuarioSeleccionado.nombre" name="nombre" #nombre="ngModel" required>
+                <div *ngIf="nombre.invalid && nombre.touched" class="text-danger">
+                    Nombre es requerido
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" [(ngModel)]="usuarioSeleccionado.telefono" name="telefono" #telefono="ngModel" required>
+                <div *ngIf="telefono.invalid && telefono.touched" class="text-danger">
+                    Teléfono es requerido
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="contrasena">Contraseña:</label>
+                <input type="password" id="contrasena" [(ngModel)]="usuarioSeleccionado.contrasena" name="contrasena" #contrasena="ngModel" required>
+                <div *ngIf="contrasena.invalid && contrasena.touched" class="text-danger">
+                    Contraseña es requerida
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" [(ngModel)]="usuarioSeleccionado.email" name="email" #email="ngModel" required>
+                <div *ngIf="email.invalid && email.touched" class="text-danger">
+                    Correo electrónico es requerido
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="rol">Rol:</label>
+                <select id="rol" [(ngModel)]="usuarioSeleccionado.rol" name="rol" #rol="ngModel" required>
+                    <option value="admin">admin</option>
+                    <option value="user">user</option>
+                    <option value="Invitado">Invitado</option>
+                </select>
+                <div *ngIf="rol.invalid && rol.touched" class="text-danger">
+                    Rol es requerido
+                </div>
+            </div>
+            <button type="submit" class="btn btn-success" >Guardar Cambios</button>
+        </form>
+    </div>
+
+    <!-- Enlace "Volver" -->
+    <a href="/admin" class="btn-back">Volver</a>
+</div>

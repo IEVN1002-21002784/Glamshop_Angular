@@ -1,0 +1,56 @@
+<div class="container">
+    <h2>Formulario de Envío</h2>
+    <form (ngSubmit)="generarQR()">
+        <!-- Selector de ubicaciones -->
+        <div class="form-group">
+            <label for="ubicacion">Selecciona tu ubicación:</label>
+            <select id="ubicacion" class="form-control" [(ngModel)]="ubicacionSeleccionada" name="ubicacionSeleccionada" required>
+                <option *ngFor="let ubicacion of ubicaciones" [value]="ubicacion.id">
+                    {{ ubicacion.calle }} - {{ ubicacion.colonia }}
+                </option>
+            </select>
+        </div>
+
+        <!-- Información del usuario autenticado -->
+        <div class="form-group">
+            <label>Información del Usuario:</label>
+            <p><strong>Nombre:</strong> {{ usuario?.nombre || 'No disponible' }}</p>
+            <p><strong>Email:</strong> {{ usuario?.email || 'No disponible' }}</p>
+            <p><strong>Teléfono:</strong> {{ usuario?.telefono || 'No disponible' }}</p>
+        </div>
+
+        <!-- Productos en el carrito -->
+        <div class="form-group">
+            <label>Productos en el Carrito:</label>
+            <ul *ngIf="productos && productos.length > 0; else noProductos">
+                <li *ngFor="let producto of productos">
+                    {{ producto.nombre_producto }} - {{ producto.cantidad }} unidades ({{ producto.precio | currency }})
+                </li>
+            </ul>
+            <!-- Total a pagar -->
+            <p *ngIf="totalAPagar"><strong>Total a pagar:</strong> {{ totalAPagar | currency }}</p>
+        </div>
+
+        <!-- Mensaje si no hay productos -->
+        <ng-template #noProductos>
+            <p>No hay productos en el carrito.</p>
+        </ng-template>
+
+        <!-- Botones para acciones -->
+        <div class="button-group">
+            <button type="submit" class="btn btn-primary">Generar QR</button>
+            <a type="button" class="btn btn-success" href="tarjetas" >Proceder a Pago</a>
+        </div>
+    </form>
+
+    <!-- Sección para mostrar el QR generado -->
+    <div *ngIf="qrData">
+        <h3>QR Generado:</h3>
+        <img [src]="qrData" alt="QR Code" />
+    </div>
+
+    <!-- Botón de volver -->
+    <div class="volver-btn">
+        <a type="button" class="btn btn-secondary" href="carrito" >Volver</a>
+    </div>
+</div>

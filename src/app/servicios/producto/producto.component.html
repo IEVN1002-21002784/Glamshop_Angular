@@ -1,0 +1,54 @@
+<div class="wrapper">
+    <div class="form-container">
+        <h2 class="form-title">Registrar Producto</h2>
+        <form [formGroup]="productoForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+                <label for="nombre_producto">Nombre del Producto:</label>
+                <input type="text" id="nombre_producto" formControlName="nombre_producto" required>
+                <div *ngIf="productoForm.get('nombre_producto')?.invalid && productoForm.get('nombre_producto')?.touched" class="error-message">
+                    El nombre del producto es requerido.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" formControlName="precio" step="0.01" min="0" required>
+                <div *ngIf="productoForm.get('precio')?.invalid && productoForm.get('precio')?.touched" class="error-message">
+                    El precio es requerido y debe ser mayor o igual a 0.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" formControlName="descripcion" required></textarea>
+                <div *ngIf="productoForm.get('descripcion')?.invalid && productoForm.get('descripcion')?.touched" class="error-message">
+                    La descripción es requerida.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="imagen">Imagen:</label>
+                <input type="file" id="imagen" (change)="onFileSelected($event)" required>
+                <div *ngIf="!selectedFile && productoForm.get('imagen')?.touched" class="error-message">
+                    Debes seleccionar una imagen.
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="categoria">Categoría:</label>
+                <select id="categoria" formControlName="categoria" required>
+                    <option value="">Seleccionar</option>
+                    <option value="nueva">Nueva</option>
+                    <option value="semi">Semi-nueva</option>
+                    <option value="usada">Usada</option>
+                </select>
+                <div *ngIf="productoForm.get('categoria')?.invalid && productoForm.get('categoria')?.touched" class="error-message">
+                    Debes seleccionar una categoría.
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="!productoForm.valid || !selectedFile">Registrar Producto</button>
+            <a href="/inicio" class="btn-volver">Volver</a>
+        </form>
+    </div>
+</div>

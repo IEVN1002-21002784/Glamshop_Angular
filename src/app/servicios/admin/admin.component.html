@@ -1,0 +1,51 @@
+
+<body>
+    <div class="admin-container">
+        <!-- Sidebar de Navegación -->
+        <aside class="sidebar">
+            <img src="glam.png" alt="Logo de GlamShop" class="logo">
+            <nav class="sidebar-nav">
+                
+                <a href="/edit"> Gestión de Usuarios</a>
+                <a href="/Eproductos">Gestión de Productos</a>
+                <a href="/editTar"> Pagos</a>
+                <a href="/ad">  Ubicaciones</a>
+            
+            </nav>
+            <a href="/inicio"class="logout-btn">Volver</a>
+        </aside>
+
+        <!-- Contenido Principal -->
+        <main class="main-content">
+            <header>
+                <h1>Panel de Administración</h1>
+                <p>Bienvenido al panel de administración de GlamShop</p>
+            </header>
+
+            <h2>Datos</h2>
+            <div class="dashboard-cards">
+              <div class="card">
+                <h3>Usuarios Registrados</h3>
+                <p>{{ datos.usuarios }}</p>
+              </div>
+              <div class="card">
+                <h3>Productos Publicados</h3>
+                <p>{{ datos.productos }}</p>
+              </div>
+              <div class="card">
+                <h3>Órdenes por Tarjeta</h3>
+                <p>{{ datos.pagos }}</p>
+              </div>
+              <div class="card">
+                <h3>Ubicaciones Registradas</h3>
+                <p>{{ datos.ubicaciones }}</p>
+              </div>
+            </div>
+       
+            <!-- Secciones para cada área de administración -->
+          
+
+            <!-- Puedes continuar agregando más secciones según tus necesidades -->
+        </main>
+    </div>
+</body>

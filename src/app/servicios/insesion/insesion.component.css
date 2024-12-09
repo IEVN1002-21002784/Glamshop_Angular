@@ -1,0 +1,138 @@
+/* styles.css */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    text-align: left;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #808080; /* Grey color */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #696969; /* Darker grey */
+}
+
+a {
+    color: #808080; /* Grey color */
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    font-size: 14px;
+    color: #999;
+    margin: 20px 0;
+}
+
+.google-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    color: #666;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.google-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.google-button:hover {
+    background-color: #f2f2f2;
+}
+
+.security-issue {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.security-button {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.security-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.security-button:hover {
+    background-color: #f2f2f2;
+}
