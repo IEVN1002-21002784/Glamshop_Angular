@@ -1,0 +1,48 @@
+<div class="form-container">
+    <h2>Registro de Reporte</h2>
+  
+    <form (submit)="enviarReporte(); $event.preventDefault()">
+      
+      <!-- Área -->
+      <div class="form-group">
+        <label for="id_area">📍 Área</label>
+        <select id="id_area" [(ngModel)]="reporte.id_area" name="id_area" required>
+          <!-- Si tienes un arreglo "areas" en tu componente, lo iteras así: -->
+          <option *ngFor="let area of areas" [value]="area.id_area">{{ area.nombre_area }}</option>
+          <!-- Si no, puedes colocar las opciones de forma estática:
+          <option value="1">Recepción</option>
+          <option value="2">Dirección</option>
+          ... -->
+        </select>
+      </div>
+      
+      <!-- Tipo de Emergencia -->
+      <div class="form-group">
+        <label for="tipo_emergencia">⚠️ Tipo de emergencia</label>
+        <select id="tipo_emergencia" [(ngModel)]="reporte.tipo_emergencia" name="tipo_emergencia" required>
+          <option value="Lentitud en la PC">Lentitud en la PC</option>
+          <option value="Problemas con la RED">Problemas con la RED</option>
+          <option value="Creacion de Usuario Gatech PLUS">Creacion de Usuario Gatech PLUS</option>
+          <option value="Cuenta Outlook">Cuenta Outlook</option>
+          <option value="Problema con impresora">Problema con impresora</option>
+          <option value="Problema con scanner">Problema con scanner</option>
+          <option value="Soporte General">Soporte General</option>
+          <option value="No puedo trabajar">No puedo trabajar</option>
+        </select>
+      </div>
+  
+      <!-- Comentarios -->
+      <div class="form-group">
+        <label for="comentarios">📝 Descripción</label>
+        <textarea id="comentarios" [(ngModel)]="reporte.comentarios" name="comentarios" required></textarea>
+      </div>
+  
+      <!-- Botones -->
+      <div class="button-group">
+        <button type="submit">📤 Enviar</button>
+        <a href="/reportes" type="button">🔙 Volver</a>
+      </div>
+      
+    </form>
+  </div>
+  

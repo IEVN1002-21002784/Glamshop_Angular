@@ -1,0 +1,96 @@
+:root {
+    --background: #e5f0ff; /* Azul claro de fondo */
+    --white: #ffffff;
+    --text-color: #333;
+    --primary-color: #002f6c; /* Azul oscuro */
+    --secondary-color: #1e90ff; /* Azul brillante */
+    --border-color: black; /* Borde negro */
+}
+
+body {
+    background-color: var(--background);
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    width: 450px;
+    text-align: center;
+    border-top: 6px solid var(--primary-color);
+}
+
+/* ✅ Centramos bien el título */
+h2 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 22px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+/* ✅ Se agregan los bordes negros a los campos */
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 2px solid var(--border-color); /* Borde negro */
+    outline: none;
+    font-size: 16px;
+    transition: border 0.3s ease-in-out;
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+}
+
+textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+/* ✅ Botones con texto en negro */
+button {
+    background: var(--primary-color);
+    color: black; /* Texto negro para mejor visibilidad */
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    width: 48%;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease-in-out, transform 0.1s ease-in-out;
+}
+
+button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.98);
+}

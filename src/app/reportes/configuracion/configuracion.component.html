@@ -1,0 +1,26 @@
+<div class="config-container">
+  <h1>Configuración</h1>
+
+  <!-- Modo Oscuro -->
+  <div class="config-item">
+      <label for="modo">🌗 Modo Oscuro</label>
+      <input type="checkbox" id="modo" [(ngModel)]="modoOscuro">
+  </div>
+
+  <!-- Selección de Idioma -->
+  <div class="config-item">
+      <label for="idioma">🌍 Seleccionar Idioma</label>
+      <select id="idioma" [(ngModel)]="idioma">
+          <option value="es">Español</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="de">Deutsch</option>
+      </select>
+  </div>
+
+  <!-- Botones -->
+  <div class="button-container">
+      <a type="submit" (click)="guardarConfiguracion()">Guardar</a>
+      <a type="button" href="/configuracion"  class="volver-btn">Volver</a>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<body>
+
+    <!-- Barra Lateral -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <img src="logo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/reportes"><span>🏠</span> Inicio</a></li>
+                <li><a href="/generar"><span>📂</span> Generar reporte</a></li>
+                <li><a href="/configuracion"><span>⚙️</span>Ir a Configuración</a></li>
+                <li><a href="#"><span>🚪</span> Cerrar Sesión</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Contenido Principal -->
+    <div class="main-content">
+        
+        <!-- Barra Superior -->
+        <header class="topbar">
+            <h1>Reportes TI</h1>
+            <input type="text" placeholder="Buscar...">
+            <button class="btn-crear">Crear</button>
+            <div class="user-icon">A</div>
+        </header>
+
+        <!-- Sección de Tarjetas -->
+        <section class="cards">
+            
+            <div class="card">
+                <h3>⚙️ General</h3>
+                <P>
+                    <a href="configuracion">Configuración</a>
+                </P>
+                
+            </div>
+            <div class="card">
+                <h3>📊 Reportes</h3>
+                <p>
+                    <a href="/graficos">Visualización de estadísticas</a>
+                </p>
+            </div>
+            
+            
+            <div class="card">
+                <h3>🛠️ Soporte</h3>
+                <p>Gestión de asistencia y tickets.</p>
+            </div>
+        </section>
+
+        <!-- Listado de Actividades -->
+        <section class="activity-list">
+            <h2>Actividades Recientes</h2>
+            <ul>
+                <li><span class="tag red">🔴</span> Error en conexión - <b>Soporte</b></li>
+                <li><span class="tag green">🟢</span> Nueva actualización disponible</li>
+                <li><span class="tag yellow">🟡</span> Revisión de tickets</li>
+                <li><span class="tag blue">🔵</span> Nueva tarea asignada</li>
+            </ul>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,121 @@
+:root {
+  --background-light: #ffffff;
+  --background-dark: #1e1e1e;
+  --text-light: #333;
+  --text-dark: #f4f4f4;
+  --primary-color: #002f6c;
+  --primary-hover: #001f4f;
+}
+
+/* Estilo Global */
+body {
+  background-color: var(--background-light);
+  color: var(--text-light);
+  transition: background 0.3s ease, color 0.3s ease;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Modo Oscuro */
+.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-dark);
+}
+
+/* Contenedor de Configuración */
+.config-container {
+  background: var(--background-light);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 350px;
+  
+  /* 🔥 Centrado absoluto */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
+  /* Transición Suave */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Adaptar el contenedor al modo oscuro */
+.dark-mode .config-container {
+  background: #2a2a2a;
+}
+
+/* Estilo del Título */
+h1 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* Estilo de los elementos dentro del formulario */
+.config-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding: 5px 10px;
+}
+
+/* Etiquetas de Configuración */
+.config-item label {
+  font-size: 1em;
+  font-weight: bold;
+}
+
+/* Estilo del Botón */
+button {
+  background: #002f6c;  /* Azul oscuro */
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  outline: none; /* Quita el borde al hacer clic */
+}
+
+/* Animación al pasar el mouse sobre el botón */
+button:hover {
+  background: var(--primary-hover);
+  transform: scale(1.05);
+}
+
+/* Estilo del Selector de Idioma */
+select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1em;
+  cursor: pointer;
+  transition: border 0.3s ease;
+}
+
+select:hover {
+  border-color: var(--primary-color);
+}
+
+/* Estilo del Checkbox */
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--primary-color);
+}
+
+/* Modo Oscuro para los elementos */
+.dark-mode select {
+  background: #444;
+  color: white;
+  border: 1px solid #888; 
+}
+
+.dark-mode input[type="checkbox"] {
+  accent-color: var(--primary-hover);
+}
